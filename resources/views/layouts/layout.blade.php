@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Laravel</title>
 
-    <title>Laravel</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="/css/main.css">4
+        
+    </head>
 
-    <link rel="stylesheet" href="/css/main.css">
-    
-</head>
+    <header>
+        <img src="/img/logo.png" alt="" class = "img-mini">
+        <p> {{ $user }} || {{ $userID }}</p>
+    </header>
 
-<header>
-    <img src="/img/logo.png" alt="" class = "img-mini">
-    <p> {{ $user }} || {{ $userID }}</p>
-</header>
+    <body>
+        @yield('content');
+    </body>
 
-<body>
-    @yield('content');
-</body>
-
-<footer>
-    Restricted database of The Korean National Police Agency (경찰청)
-</footer>
-
+    <footer>
+        Restricted database of The Korean National Police Agency (경찰청)
+    </footer>
 </html>
