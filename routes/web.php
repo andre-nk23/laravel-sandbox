@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $user = request('user');
+    $userID = request('userID');
+
     $leader = [
-        "leader" => "Vampire God",
+        "leader" => "Song Ahyeong",
         "member" => [
             "1" => "Sung Taehoon",
             "2" => "Kim Hyunsoo",
@@ -25,6 +28,11 @@ Route::get('/', function () {
             "6" => "Lucy"
         ]
     ];
-    return view('welcome', $leader);
+    return view('welcome', [
+        "leader" => $leader["leader"],
+        "member" => $leader["member"],
+        "user" => $user,
+        "userID" => $userID
+    ]);
 });
 
