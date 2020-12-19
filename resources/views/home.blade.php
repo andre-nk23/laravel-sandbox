@@ -7,30 +7,14 @@
                 D-R-001: The Lions
             </div>
 
-            <p>{{ $leader }} - Leader</p>
-            {{-- @if ($leader == 'Vampire God')
-                <p> The first and strongest pure blooded vampire ever lived. </p>
-            @elseif( $leader == "Song Ahyeong")
-                <p> The strongest mind control and transfiguration female vampire ever lived. </p>
-            @else
-                <p> No sufficient data </p>
-            @endif --}}
+            {{-- <p>{{ $leader }} - Leader</p> --}}
             <p>
                 @foreach ($member as $value)
                     @if ($loop->last)
-                        @if ($value == 'Lucy' || $value == 'Shin Geunwoo')
-                            {{ $value }} is deceased
-                        @else
-                            {{ $value }}
-                        @endif
+                        {{ $value->name }} || {{ $value->user }}
                     @else
-                        @if ($value == 'Lucy' || $value == 'Shin Geunwoo')
-                            {{ $value }} is deceased -
-                        @else
-                            {{ $value }} -
-                        @endif
+                        {{ $value->name }} - 
                     @endif
-
                 @endforeach
             </p>
 

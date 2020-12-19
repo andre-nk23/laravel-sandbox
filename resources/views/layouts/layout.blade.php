@@ -15,7 +15,7 @@
 
     <header>
         <img src="/img/logo.png" alt="" class = "img-mini">
-        <p> {{ $user }} || {{ $userID }}</p>
+        {{-- <p> {{ $member->user }}</p> --}}
     </header>
 
     <body>

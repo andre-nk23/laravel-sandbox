@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TheLions;
 
 class MainPageController extends Controller
 {
@@ -10,33 +11,25 @@ class MainPageController extends Controller
         $user = request('user');
         $userID = request('userID');
     
-        $leader = [
-            "leader" => "Song Ahyeong",
-            "member" => [
-                "1" => "Sung Taehoon",
-                "2" => "Kim Hyunsoo",
-                "3" => "Hwang Mangi",
-                "4" => "Song Ahyeong",
-                "5" => "Shin Geunwoo",
-                "6" => "Lucy"
-            ]
-        ];
+        $the_lions = TheLions::orderBy("name", "desc")->get();
+
         return view('home', [
-            "leader" => $leader["leader"],
-            "member" => $leader["member"],
+            "member" => $the_lions,
             "user" => $user,
             "userID" => $userID
         ]);
     }
 
-    public function show($query){
-        $user = '';
-        $userID = '';
+    public function show($id){
         
-        return view('profiles', [
-            "query" => $query,
-            "user" => $user,
-            "userID" => $userID
+        $the_lions = TheLions::findorFail($id);
+        
+        return view('thelions.profiles', [
+            "query" => $the_lions
         ]);
+    }
+
+    public function create(){     
+        return view('thelions.create');
     }
 }
