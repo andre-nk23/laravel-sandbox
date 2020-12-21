@@ -1,4 +1,4 @@
-@extends('layouts.layout');
+@extends('layouts.app');
 
 @section('content')
     <div class="flex-center position-ref full-height">
@@ -15,7 +15,7 @@
                 @csrf
                 @method("DELETE")
                 {{-- override method POST --}}
-                <button>Delete records</button>
+                <button class="de">Delete records</button>
             </form>
         </div>
     </div>

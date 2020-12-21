@@ -1,4 +1,4 @@
-@extends('layouts.layout');
+@extends('layouts.app');
 
 @section('content')
 <div class="wrapper create-pizza">
@@ -10,7 +10,7 @@
       <label for="user">Submit reporter's name:</label>
       <input type="text" name="user" id="user" required>
       <label for="ability">Vampire's ability:</label>
-      <input type="text" name="ability" id="ability" required>
+      <input type="text" name="ability" id="ability" required><br/>
       <fieldset>
         <label> Vampire's blood type: </label>
         <input type="checkbox" name="bloodtype[]" value="pureblood"> Pure Blood <br/>
@@ -19,7 +19,7 @@
         <input type="checkbox" name="bloodtype[]" value="thelions"> The Lions <br/>
         <input type="checkbox" name="bloodtype[]" value="artificial"> Artificial <br/>
       </fieldset>
-      <input type="submit" value="Submit">
+      <input class ="button-del" type="submit" value="Submit">
     </form>
   </div>
 @endsection

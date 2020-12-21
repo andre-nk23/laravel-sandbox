@@ -3,23 +3,19 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
+        <title></title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <link rel="stylesheet" href="/css/main.css">4
-        
+        <link rel="stylesheet" href="/css/main.css">
     </head>
-
     <header>
-        <img src="/img/logo.png" alt="" class = "img-mini">
+        
         {{-- <p> {{ $member->user }}</p> --}}
     </header>
 
     <body>
-        @yield('content');
+        @yield('content')
     </body>
 
     <footer>

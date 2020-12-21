@@ -7,6 +7,11 @@ use App\Models\TheLions;
 
 class MainPageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $user = request('user');
         $userID = request('userID');
