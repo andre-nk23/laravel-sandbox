@@ -19,6 +19,7 @@ class CreateTheLionsTable extends Migration
             $table->string("name");
             $table->string("ability");
             $table->string("user");
+            $table->json("bloodtype");
         });
     }
 

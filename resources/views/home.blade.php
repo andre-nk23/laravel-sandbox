@@ -11,13 +11,23 @@
             <p>
                 @foreach ($member as $value)
                     @if ($loop->last)
-                        {{ $value->name }} || {{ $value->user }}
+                        {{ $value->name }}
+
+                        || {{ $value->user }}
                     @else
-                        {{ $value->name }} - 
+                        {{ $value->name }}
+
+                        -
                     @endif
                 @endforeach
-            </p>
 
+            </p>
+            {{-- <p>
+                @foreach ($member->bloodtype as $bloodytype)
+                    {{ $bloodytype }}
+                @endforeach
+            </p> --}}
+            <p class="mssg"> {{ session('mssg') }} </p>
         </div>
     </div>
 @endsection

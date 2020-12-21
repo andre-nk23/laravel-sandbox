@@ -6,7 +6,17 @@
             <div class="title m-b-md">
                 D-R-001-{{ $query->id }}: {{ $query->name }}
             </div>
-            <p>data</p>
+            <p>
+                @foreach ($query->bloodtype as $blood)
+                    {{ $blood }}
+                @endforeach
+            </p>
+            <form action="/profiles/{{ $query->id }}" method="POST">
+                @csrf
+                @method("DELETE")
+                {{-- override method POST --}}
+                <button>Delete records</button>
+            </form>
         </div>
     </div>
 @endsection

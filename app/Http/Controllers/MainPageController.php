@@ -32,4 +32,25 @@ class MainPageController extends Controller
     public function create(){     
         return view('thelions.create');
     }
+
+    public function store(){
+
+        $thelionsdatas = new TheLions();
+
+        $thelionsdatas->name = request('name');
+        $thelionsdatas->ability = request('ability');
+        $thelionsdatas->user = request('user');
+        $thelionsdatas->bloodtype = request('bloodtype');
+
+        $thelionsdatas->save();
+
+        return redirect('/')->with("mssg", "Thanks for the report");
+    }
+
+    public function destroy($id){
+        $thelions = TheLions::findOrFail($id);
+        $thelions->delete();
+
+        return redirect('/')->with("mssg", "Record has been deleted");
+    }
 }
